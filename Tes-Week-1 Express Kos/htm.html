@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>belajar</h1>
+    <div id="student">
+        <!-- <p>maman</p> -->
+    </div>
+    <p>Paragraf 1.</p>
+    <p>Paragraf 2.</p>
+    <p>Paragraf 3.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML =
+            'Paragraf pertama (indeks 0) adalah : ' + x[0].innerHTML;
+    </script>
+
+    <script>
+        var studentenlemant = document.getElementById("student");
+        // console.log(student.innerHTML)
+        var student = [{
+                name: 'maman',
+                age: 20
+            },
+            {
+                name: 'mimin',
+                age: 20
+            }
+
+        ]
+        console.log(student.length)
+        for (let index = 0; index < student.length; index++) {
+            console.log(student[1].name)
+            studentenlemant.innerHTML += "<h1>nama</h1>" + student[index].name + ' ' + 'age';
+            // console.log(studentenlemant)
+        }
+    </script>
+</body>
+
+</html>
