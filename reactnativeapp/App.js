@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet,View} from 'react-native';
+import {StyleSheet,View} from 'react-native-elements';
 import IndexApp from "./src/IndexApp";
 
 export default class App extends Component{

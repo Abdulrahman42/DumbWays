@@ -1,0 +1,66 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="row" id="demo">
+                <!-- This For Looping Card -->
+                {{#each list}}
+                <div class="col-6 mt-2">
+                    <div class="card">
+                        <img src="{{this.image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary btn1">{{this.price}}</a>
+                            <h6>{{this.name}}</h6>
+                            <p>{{this.address}}</p>
+                            Owner<br>
+                            <span class="badge badge-info">{{this.name_user}}</span>
+                            <span class="badge badge-pill badge-primary">{{this.large}} M<sup>2</sup></span>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-6">
+            <div id="map" style="width:640px; height:600px">
+                <!-- This For Maps -->
+            
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var mapOptions = {
+        center: [-6.297230, 106.732841],
+        zoom: 15
+    }
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+    // Adding layer to the map
+    map.addLayer(layer);
+
+    // Creating a marker
+    // Looping Marker with value from array of object
+    {{#each list}}
+    var marker = L.marker([{{this.longitude }}, {{this.latitude}}]);
+
+    marker.bindPopup(`
+    <div class=" mt-2">
+        <div class="card">
+            <img src="{{this.image}}" class="card-img-top" alt="..."> 
+                <div class="card-body"> 
+                <button href="#" class="btn btn-primary btn1">{{this.price}}</button> 
+                <h6>{{this.name}}</h6> <p>{{this.address}}</p> Owner<br> 
+            <span class="badge badge-info">{{this.name_user}}</span>
+            <span class="badge badge-pill badge-primary">{{this.large}} M<sup>2</sup></span>
+                </div> 
+        </div>
+    </div>`
+    ).openPopup();
+    // Adding marker to the map
+    marker.addTo(map);
+    {{/each}}
+</script>

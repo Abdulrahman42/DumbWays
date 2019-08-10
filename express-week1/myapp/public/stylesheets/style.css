@@ -1,0 +1,36 @@
+/* body {
+    display: flex;
+    flex-direction: row;
+} */
+
+.btn1 {
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 100px;
+    margin-right: -150px;
+
+}
+
+.btn2 {
+    position: absolute;
+    margin: auto;
+    margin-top: -110px;
+    margin-left: -70px;
+    margin-right: -10px;
+    /* align-content: center; */
+}
+
+
+.card-title {
+    margin-top: -30px;
+}
+
+/* 
+#demo {
+    display: flex;
+    flex-direction: row;
+} */
+
+#mapid {
+    height: 180px;
+}
